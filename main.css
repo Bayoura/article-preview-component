@@ -9,34 +9,88 @@
 }
 
 :root {
-    --darkGrayBlue: hsl(217, 19%, 35%);
-    --darkBlue: hsl(214, 17%, 51%);
-    --grayBlue: hsl(212, 23%, 69%);
-    --lightBlue: hsl(210, 46%, 95%);
+    --darkGrayBlue: hsl(217, 19%, 35%); /* headings */
+    --darkBlue: hsl(214, 17%, 51%); /* text colour */
+    --grayBlue: hsl(212, 23%, 69%); /* span colour */
+    --lightBlue: hsl(210, 46%, 95%); /* background colour */
+    --fontSize: 0.8125rem;  /* 13px */
 }
 
 body {
     background-color: var(--lightBlue);
     font-family: 'Manrope', sans-serif;
-    font-size: 0.8125rem; /* 13px */
+    font-size: var(--fontSize);
+    line-height: 1.6;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+
+.card-container {
+    color: var(--darkBlue);
+    margin-top: 50px;
+    width: 100%;
+    max-width: 90%;
+}
+
+.drawer-img {
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+}
+
+.text-container {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 0 0 8px 8px;
+    position: relative;
+    top: -50px;
+    padding: 35px 30px 20px 30px;
+}
+
 h1, h2 {
     color: var(--darkGrayBlue);
 }
 
-.card-container {
-    background-color: hsl(0, 0%, 100%);
-    color: var(--darkBlue);
-    border-radius: 10px;
-    width: 100%;
-    max-width: 85%;
+h1 {
+    font-size: 1rem;
+    margin-bottom: 13px;
 }
 
-.drawer-img {
+h2 {
+    font-size: var(--fontSize);
+}
+
+.social-information {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
+    margin-top: 35px;
+}
+
+.avatar-name-container {
+    display: flex;
+    gap: 15px;
+}
+
+.profile-picture {
+    width: 40px;
+    border-radius: 50%;
+}
+
+h2 > span {
+    display: block;
+    font-weight: 500;
+    color: var(--grayBlue);
+}
+
+.share-btn-container {
+    background-color: var(--lightBlue);
+    border-radius: 50%;
+    padding: 5px 7.5px;
+}
+
+.share-buttons {
+    display: none;
 }
