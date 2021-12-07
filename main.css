@@ -21,17 +21,18 @@ body {
     font-family: 'Manrope', sans-serif;
     font-size: var(--fontSize);
     line-height: 1.7;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
 }
 
 .card-container {
     color: var(--darkBlue);
-    margin-top: 50px;
     width: 100%;
-    max-width: 90%;
+    max-width: 450px;
 }
 
 .drawer-img {
@@ -42,6 +43,8 @@ body {
 .card-bottom {
     position: relative;
     top: -50px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 0 0 8px 8px;
 }
 
 /* ---------------------CARD-TEXT---------------------- */
@@ -60,8 +63,7 @@ h2 {
 }
 
 .text-container {
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 0 0 8px 8px;
+    
     padding: 35px 40px 0 40px;
 }
 
@@ -143,4 +145,35 @@ h2 > span {
 
 .button-container > img {
     padding: 0 7px;
+}
+
+@media (min-width: 450px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+}
+
+
+@media (min-width: 767px) {
+    body {
+        padding: 0 0 0 60px;
+    }
+
+    .card-container {
+        display: flex;
+        max-width: 890px;
+    }
+
+    .drawer-img {
+        border-radius: 8px 0 0 8px;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-bottom {
+        border-radius: 0 8px 8px 0;
+        top: 0;
+        right: 60px;
+        max-width: 455px;
+    }
 }
