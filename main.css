@@ -20,13 +20,19 @@ body {
     background-color: var(--lightBlue);
     font-family: 'Manrope', sans-serif;
     font-size: var(--fontSize);
-    line-height: 1.7;
+    line-height: 1.6;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    justify-items: center;
+}
+
+/* The grid display enables us to get a sticky header but it also pushes the card to the top.
+In order to center the card: */
+.main-wrap {
+    display: flex;
+    align-items: center;
 }
 
 .card-container {
@@ -63,7 +69,6 @@ h2 {
 }
 
 .text-container {
-    
     padding: 35px 40px 0 40px;
 }
 
@@ -71,7 +76,7 @@ h2 {
     padding-bottom: 20px;
 }
 
-/* ------------------SOCIAL-INFOS--------------------- */
+/* ------------------SOCIAL-INFO--------------------- */
 
 .social-information {
     display: flex;
@@ -105,6 +110,7 @@ h2 > span {
     background-color: var(--lightBlue);
     border-radius: 50%;
     padding: 5px 7.5px;
+    cursor: pointer;
 }
 
 /* -----------------SHARE-BUTTONS------------------ */
@@ -123,11 +129,10 @@ h2 > span {
 }
 
 .button-wrap {
-    height: 44px;
+    height: 41px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .button-wrap > .share-btn-container {
@@ -147,12 +152,54 @@ h2 > span {
     padding: 0 7px;
 }
 
+.modal-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    transform-origin: 50% 0%;
+    transform: scale(0) translateY(-190px);
+    opacity: 0;
+    transition: .5s;
+}
+
+.modal.active {
+    opacity: 1;
+    transform: scale(1) translateY(-90px);
+    background-color: var(--darkGrayBlue);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 180px;
+    height: 45px;
+}
+
+.modal.active:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 45px;
+    margin: 0 auto;
+    height: 0;
+    width: 0;
+    border-left: 10px solid transparent; 
+    border-right: 10px solid transparent; 
+    border-top: 10px solid var(--darkGrayBlue);
+}
+
+/* --------------------MEDIA-QUERIES---------------------- */
+
 @media (min-width: 450px) {
     h1 {
         font-size: 1.2rem;
     }
 }
-
 
 @media (min-width: 767px) {
     body {
@@ -161,19 +208,26 @@ h2 > span {
 
     .card-container {
         display: flex;
-        max-width: 890px;
+        max-height: 310px;
+        max-width: 100%;
+        width: auto;
     }
 
     .drawer-img {
         border-radius: 8px 0 0 8px;
         height: 100%;
         object-fit: cover;
+        max-width: 350px;
     }
 
     .card-bottom {
         border-radius: 0 8px 8px 0;
         top: 0;
         right: 60px;
-        max-width: 455px;
+        max-width: 440px;
+    }
+
+    .text-container {
+        padding-bottom: 20px;
     }
 }
