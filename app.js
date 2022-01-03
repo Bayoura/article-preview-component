@@ -1,10 +1,10 @@
 const shareBtn_div = document.querySelectorAll('.share-btn-container');
-const shareButtons_div = document.querySelector('.share-buttons');
+const shareIcons_div = document.querySelector('.share-icons');
 const socialInfo_div = document.querySelector('.social-information');
 const popUp_div = document.querySelector('.pop-up');
 
 window.addEventListener('resize', () => {
-    shareButtons_div.classList.remove('active');
+    shareIcons_div.classList.remove('active');
     socialInfo_div.classList.remove('hidden');
     popUp_div.classList.remove('active');
 })
@@ -17,7 +17,7 @@ window.addEventListener('keydown', e => {
 
 shareBtn_div.forEach(button => button.addEventListener('click', () => {           
     if (window.innerWidth < 767) {               
-        shareButtons_div.classList.toggle('active');               
+        shareIcons_div.classList.toggle('active');               
         socialInfo_div.classList.toggle('hidden');          
     } else {    
         popUp_div.classList.toggle('active');       
