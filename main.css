@@ -37,7 +37,6 @@ In order to center the card: */
 
 .card-container {
     color: var(--darkBlue);
-    width: 100%;
     max-width: 450px;
 }
 
@@ -79,9 +78,6 @@ h2 {
 /* ------------------SOCIAL-INFO--------------------- */
 
 .social-information {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 15px 0;
 }
 
@@ -107,61 +103,55 @@ h2 > span {
 }
 
 .share-btn-container {
+    z-index: 10;
     background-color: var(--lightBlue);
     border-radius: 50%;
     padding: 5px 7.5px;
     cursor: pointer;
 }
 
-/* -----------------SHARE-BUTTONS------------------ */
+/* -----------------SHARE-ICONS AND OVERLAY------------------ */
 
-.share-buttons {
+.share-icons {
     display: none;
 }
 
-.share-buttons.active {
+.share-icons.active {
     color: var(--grayBlue);
     display: block;
     padding: 15px 40px;
     background-color: var(--darkGrayBlue);
     border-radius: 0 0 8px 8px;
-    width: 100%;
 }
 
-.button-wrap {
+.icon-wrap {
     height: 41px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.button-wrap > .share-btn-container {
+.icon-wrap > .share-btn-container {
     background-color: var(--grayBlue);
 }
 
-.button-container {
+.icon-container {
     display: flex;
-    gap: 5px;
+    gap: 15px;
 }
 
 .share-txt {
     letter-spacing: 6px;
 }
 
-.button-container > img {
-    padding: 0 7px;
-}
-
-.share-btn-container svg path {
-    fill: currentColor;
+.icon {
+    cursor: pointer;
 }
 
 .pop-up-wrap {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
     position: absolute; 
     right: -45px;  
     bottom: -25px;
@@ -169,6 +159,7 @@ h2 > span {
 }
 
 .pop-up {
+    z-index: 10;
     transform-origin: 50% 0%;
     transform: scale(0) translateY(-200px);
     opacity: 0;
@@ -203,6 +194,21 @@ h2 > span {
     border-top: 10px solid var(--darkGrayBlue);
 }
 
+.overlay {
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 300ms ease-out;
+    pointer-events: none;
+}
+
+.overlay.active {
+    pointer-events: all;
+}
+
 /* --------------------MEDIA-QUERIES---------------------- */
 
 @media (min-width: 450px) {
@@ -218,9 +224,7 @@ h2 > span {
 
     .card-container {
         display: flex;
-        max-height: 310px;
         max-width: 100%;
-        width: auto;
     }
 
     .pop-up-wrap {
