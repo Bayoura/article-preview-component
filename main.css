@@ -106,22 +106,22 @@ h2 > span {
     z-index: 10;
     background-color: var(--lightBlue);
     border-radius: 50%;
-    padding: 5px 7.5px;
+    padding: 7px;
     cursor: pointer;
 }
 
-/* -----------------SHARE-ICONS AND OVERLAY------------------ */
+/* -----------------SHARE-ICONS------------------ */
 
 .share-icons {
     display: none;
 }
 
 .share-icons.active {
+    background-color: var(--darkGrayBlue);
+    border-radius: 0 0 8px 8px;
     color: var(--grayBlue);
     display: block;
     padding: 15px 40px;
-    background-color: var(--darkGrayBlue);
-    border-radius: 0 0 8px 8px;
 }
 
 .icon-wrap {
@@ -131,10 +131,6 @@ h2 > span {
     justify-content: space-between;
 }
 
-.icon-wrap > .share-btn-container {
-    background-color: var(--grayBlue);
-}
-
 .icon-container {
     display: flex;
     gap: 15px;
@@ -142,11 +138,19 @@ h2 > span {
 
 .share-txt {
     letter-spacing: 6px;
+    color: var(--grayBlue);
 }
 
 .icon {
     cursor: pointer;
 }
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+/* ---------------POP-UP AND OVERLAY----------------------- */
 
 .pop-up-wrap {
     display: flex;
@@ -176,16 +180,17 @@ h2 > span {
     align-items: center;
     gap: 10px;
     width: 200px;
-    height: 45px;
+    height: 46px;
 }
 
+/* This creates the little triangle of the pop-up */
 .pop-up.active:after {
     content: '';
     display: block;
     position: absolute;
     left: 0;
     right: 0;
-    top: 44px;
+    top: 46px;
     margin: 0 auto;
     height: 0;
     width: 0;
@@ -194,6 +199,7 @@ h2 > span {
     border-top: 10px solid var(--darkGrayBlue);
 }
 
+/* The purpose of the overlay is only so that the user can click anywhere to close the pop-up */
 .overlay {
     z-index: 5;
     position: fixed;
