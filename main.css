@@ -28,7 +28,7 @@ body {
     justify-items: center;
 }
 
-/* The grid display enables us to get a sticky header but it also pushes the card to the top.
+/* The grid display enables us to get a footer that sticks to the bottom but it also pushes the card to the top.
 In order to center the card: */
 .main-wrap {
     display: flex;
